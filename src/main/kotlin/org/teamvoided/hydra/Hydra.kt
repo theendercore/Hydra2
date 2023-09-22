@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory
 import org.teamvoided.hydra.init.CommandRegistry
 import org.teamvoided.hydra.init.KeyBinds
 import org.teamvoided.hydra.init.StreamActionRegistry
+import org.teamvoided.hydra.networking.NetworkManager
 
 
 @Suppress("unused")
@@ -19,6 +20,7 @@ object Hydra {
         StreamActionRegistry.init()
         CommandRegistry.init()
         KeyBinds.init()
+        NetworkManager.initServer()
 
 //        val resultList = TwitchIntegration.client.helix.getUsers(ModConfig.oauthKey, null, listOf(ModConfig.username)).execute()
 //        val bd = resultList.users[0].id
@@ -32,6 +34,7 @@ object Hydra {
 
     fun clientInit() {
         LOGGER.info("Hello from Client")
+        NetworkManager.initClient()
     }
 
     fun id(path: String) = Identifier(MODID, path)
