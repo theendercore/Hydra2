@@ -2,6 +2,7 @@ package org.teamvoided.template
 
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
+import org.teamvoided.template.init.CommandRegistry
 import org.teamvoided.template.init.StreamActionRegistry
 
 @Suppress("unused")
@@ -14,6 +15,7 @@ object Template {
     fun commonInit() {
         LOGGER.info("Hello from Common")
         StreamActionRegistry.init()
+        CommandRegistry.init()
     }
 
     fun clientInit() {
