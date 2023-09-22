@@ -22,8 +22,8 @@ modSettings {
     modId(base.archivesName.get())
     modName("Team Voided Template Mod")
 
-    entrypoint("main", "org.teamvoided.template.Template::commonInit")
-    entrypoint("client", "org.teamvoided.template.Template::clientInit")
+    entrypoint("main", "org.teamvoided.hydra.Hydra::commonInit")
+    entrypoint("client", "org.teamvoided.hydra.Hydra::clientInit")
 
     dependency("twitch4j", "1.17.0+1.3.0")
 }

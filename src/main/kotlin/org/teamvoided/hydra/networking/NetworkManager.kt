@@ -1,6 +1,10 @@
 package org.teamvoided.hydra.networking
 
-import org.teamvoided.template.Template.id
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking
+import net.minecraft.text.Text
+import org.teamvoided.hydra.Hydra.id
+import org.teamvoided.hydra.networking.packages.JoinServerC2S
 
 @Suppress("unused")
 object NetworkManager {
@@ -22,10 +26,15 @@ object NetworkManager {
     //S2C
 
     fun initServer() {
+        ServerPlayNetworking.registerGlobalReceiver(JOIN_SERVER) { server, player, handler, buf, sender ->
+            val pack = JoinServerC2S(buf)
+            player.sendMessage(Text.of(pack.broadcasterId), false)
+        }
 
     }
 
     fun initClient() {
+        ClientPlayNetworking.registerGlobalReceiver(JOIN_SERVER) { client, handler, buf, sender -> }
 
     }
 
