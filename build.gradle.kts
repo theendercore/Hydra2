@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("fabric-loom") version "1.3.8"
+    id("fabric-loom") version "1.3-SNAPSHOT"
     kotlin("jvm") version "1.9.0"
     kotlin("plugin.serialization") version "1.9.0"
     id("org.teamvoided.iridium") version "3.0.2"
@@ -23,6 +23,8 @@ modSettings {
 
     entrypoint("main", "org.teamvoided.templatemod.TemplateMod::commonInit")
     entrypoint("client", "org.teamvoided.templatemod.TemplateMod::clientInit")
+
+    dependency("twitch4j", "1.17.0-1.3.0")
 }
 
 dependencies{
