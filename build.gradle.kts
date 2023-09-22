@@ -25,7 +25,7 @@ modSettings {
     entrypoint("main", "org.teamvoided.template.Template::commonInit")
     entrypoint("client", "org.teamvoided.template.Template::clientInit")
 
-    dependency("twitch4j", "1.17.0-1.3.0")
+    dependency("twitch4j", "1.17.0+1.3.0")
 }
 
 dependencies{
