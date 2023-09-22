@@ -3,9 +3,8 @@ package org.teamvoided.hydra
 import com.github.philippheuer.credentialmanager.domain.OAuth2Credential
 import com.github.twitch4j.TwitchClient
 import com.github.twitch4j.TwitchClientBuilder
-import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
-import org.teamvoided.voidlib.core.MODID
+import org.teamvoided.template.Template.MODID
 
 object TwitchIntegration {
     private var innerClient: TwitchClient? = null
@@ -16,7 +15,7 @@ object TwitchIntegration {
                 mcChatMethod(Text.translatable("$MODID.twitch.oauth.no_credentials"))
                 TwitchClientBuilder.builder().build()
             } else {
-                if (innerClient != null) innerClient = TwitchClientBuilder.builder()
+                if (innerClient == null) innerClient = TwitchClientBuilder.builder()
                     .withEnableHelix(true)
                     .withEnablePubSub(true)
                     .withEnableChat(true)
@@ -25,7 +24,6 @@ object TwitchIntegration {
 
                 if (innerClient == null) {
                     mcChatMethod(Text.translatable("$MODID.twitch.oauth.failed"))
-
                     return TwitchClientBuilder.builder().build()
                 }
 
@@ -33,6 +31,6 @@ object TwitchIntegration {
             }
         }
 
-    fun mcChatMethod(text: Text) =
-        MinecraftClient.getInstance().inGameHud.chatHud.addMessage(text)
+    fun mcChatMethod(text: Text) = println(text.toString())
+//        MinecraftClient.getInstance().inGameHud.chatHud.addMessage(text)
 }
