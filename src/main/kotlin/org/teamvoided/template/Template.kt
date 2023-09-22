@@ -18,7 +18,6 @@ object Template {
     fun commonInit() {
         LOGGER.info("Hello from Common")
         StreamActionRegistry.init()
-
         CommandRegistry.init()
 
         val resultList = TwitchIntegration.client.helix.getUsers(ModConfig.oauthKey, null, listOf(ModConfig.username)).execute()
