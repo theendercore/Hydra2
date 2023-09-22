@@ -18,13 +18,13 @@ object Hydra {
         StreamActionRegistry.init()
         CommandRegistry.init()
 
-        val resultList = TwitchIntegration.client.helix.getUsers(ModConfig.oauthKey, null, listOf(ModConfig.username)).execute()
-        val bd = resultList.users[0].id
-        println(bd)
-        val helpA = TwitchIntegration.client.helix.getCustomRewards(ModConfig.oauthKey, bd, null, null).execute()
-        for (z in helpA.rewards) {
-            println(z.title)
-        }
+//        val resultList = TwitchIntegration.client.helix.getUsers(ModConfig.oauthKey, null, listOf(ModConfig.username)).execute()
+//        val bd = resultList.users[0].id
+//        println(bd)
+//        val helpA = TwitchIntegration.client.helix.getCustomRewards(ModConfig.oauthKey, bd, null, null).execute()
+//        for (z in helpA.rewards) {
+//            println(z.title)
+//        }
 
     }
 
