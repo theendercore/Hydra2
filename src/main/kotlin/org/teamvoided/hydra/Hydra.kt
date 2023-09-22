@@ -1,19 +1,17 @@
-package org.teamvoided.template
+package org.teamvoided.hydra
 
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
-import org.teamvoided.hydra.ModConfig
-import org.teamvoided.hydra.TwitchIntegration
-import org.teamvoided.template.init.CommandRegistry
-import org.teamvoided.template.init.StreamActionRegistry
+import org.teamvoided.hydra.init.CommandRegistry
+import org.teamvoided.hydra.init.StreamActionRegistry
 
 
 @Suppress("unused")
-object Template {
+object Hydra {
     const val MODID = "template"
 
     @JvmField
-    val LOGGER = LoggerFactory.getLogger(Template::class.java)
+    val LOGGER = LoggerFactory.getLogger(Hydra::class.java)
 
     fun commonInit() {
         LOGGER.info("Hello from Common")

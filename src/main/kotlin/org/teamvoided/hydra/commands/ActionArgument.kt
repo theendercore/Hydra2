@@ -1,7 +1,7 @@
-package org.teamvoided.template.commands
+package org.teamvoided.hydra.commands
 
 import net.minecraft.registry.Holder
-import org.teamvoided.template.StreamAction
+import org.teamvoided.hydra.StreamAction
 import java.util.function.Predicate
 
 class ActionArgument(private val actionHolder: Holder<StreamAction>) : Predicate<StreamAction> {

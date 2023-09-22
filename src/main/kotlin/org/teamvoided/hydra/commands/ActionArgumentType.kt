@@ -1,4 +1,4 @@
-package org.teamvoided.template.commands
+package org.teamvoided.hydra.commands
 
 import com.google.gson.JsonObject
 import com.mojang.brigadier.StringReader
@@ -11,10 +11,10 @@ import net.minecraft.command.CommandBuildContext
 import net.minecraft.command.argument.ArgumentTypeInfo
 import net.minecraft.network.PacketByteBuf
 import net.minecraft.registry.HolderLookup
-import org.teamvoided.template.StreamAction
-import org.teamvoided.template.commands.ActionStringReader.Companion.getSuggestions
-import org.teamvoided.template.commands.ActionStringReader.Companion.parseForAction
-import org.teamvoided.template.init.StreamActionRegistry.STREAM_ACTION_KEY
+import org.teamvoided.hydra.StreamAction
+import org.teamvoided.hydra.commands.ActionStringReader.Companion.getSuggestions
+import org.teamvoided.hydra.commands.ActionStringReader.Companion.parseForAction
+import org.teamvoided.hydra.init.StreamActionRegistry.STREAM_ACTION_KEY
 import java.util.concurrent.CompletableFuture
 
 class ActionArgumentType(context: CommandBuildContext) : ArgumentType<ActionArgument> {

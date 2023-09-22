@@ -1,4 +1,4 @@
-package org.teamvoided.template.init
+package org.teamvoided.hydra.init
 
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
 import net.minecraft.entity.EntityType
@@ -7,11 +7,11 @@ import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.util.Identifier
-import org.teamvoided.template.StreamAction
-import org.teamvoided.template.Template
+import org.teamvoided.hydra.StreamAction
+import org.teamvoided.hydra.Hydra
 
 object StreamActionRegistry {
-    val STREAM_ACTION_KEY = RegistryKey.ofRegistry<StreamAction>(Identifier(Template.MODID, "stream_action"))
+    val STREAM_ACTION_KEY = RegistryKey.ofRegistry<StreamAction>(Identifier(Hydra.MODID, "stream_action"))
     val STREAM_ACTION_REGISTRY: Registry<StreamAction> =
         FabricRegistryBuilder.createSimple(STREAM_ACTION_KEY).buildAndRegister()
 
@@ -23,6 +23,6 @@ object StreamActionRegistry {
     }
 
     private fun register(name: String, action: StreamAction): StreamAction {
-        return Registry.register(STREAM_ACTION_REGISTRY, Identifier(Template.MODID, name), action)
+        return Registry.register(STREAM_ACTION_REGISTRY, Identifier(Hydra.MODID, name), action)
     }
 }

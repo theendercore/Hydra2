@@ -1,4 +1,4 @@
-package org.teamvoided.template.commands
+package org.teamvoided.hydra.commands
 
 import com.mojang.brigadier.StringReader
 import com.mojang.brigadier.exceptions.CommandSyntaxException
@@ -11,8 +11,8 @@ import net.minecraft.registry.HolderLookup
 import net.minecraft.registry.RegistryKey
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
-import org.teamvoided.template.StreamAction
-import org.teamvoided.template.init.StreamActionRegistry.STREAM_ACTION_KEY
+import org.teamvoided.hydra.StreamAction
+import org.teamvoided.hydra.init.StreamActionRegistry.STREAM_ACTION_KEY
 import java.util.*
 import java.util.concurrent.CompletableFuture
 import java.util.function.Function

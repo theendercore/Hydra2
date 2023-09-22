@@ -1,8 +1,8 @@
-package org.teamvoided.template.commands
+package org.teamvoided.hydra.commands
 
 import com.mojang.brigadier.context.CommandContext
 import net.minecraft.server.command.ServerCommandSource
-import org.teamvoided.template.commands.ActionArgumentType.Companion.getActionArgument
+import org.teamvoided.hydra.commands.ActionArgumentType.Companion.getActionArgument
 
 object HydraCommand {
     fun execute(context: CommandContext<ServerCommandSource>): Int {
