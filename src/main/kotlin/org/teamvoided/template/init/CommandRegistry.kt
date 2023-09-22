@@ -18,8 +18,10 @@ object CommandRegistry {
 
         CommandRegistrationCallback.EVENT.register(CommandRegistrationCallback { dispatcher, context, _ ->
             dispatcher.register(CommandManager.literal("hydra").requires { it.hasPermissionLevel(2) }
-                .then(
-                    CommandManager.argument("test", ActionArgumentType(context)).executes { HydraCommand.execute(it) }
+                .then(CommandManager.literal("test")
+                    .then(CommandManager.argument("action", ActionArgumentType(context))
+                        .executes { HydraCommand.execute(it) }
+                    )
                 )
             )
         })

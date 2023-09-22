@@ -6,7 +6,7 @@ import org.teamvoided.template.commands.ActionArgumentType.Companion.getActionAr
 
 object HydraCommand {
     fun execute(context: CommandContext<ServerCommandSource>): Int {
-        val argument = getActionArgument(context, "test")
+        val argument = getActionArgument(context, "action")
         argument!!.getValue().execute(context.source.player!!)
         return 1
     }
