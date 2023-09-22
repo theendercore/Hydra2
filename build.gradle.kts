@@ -21,8 +21,8 @@ modSettings {
     modId(base.archivesName.get())
     modName("Team Voided Template Mod")
 
-    entrypoint("main", "org.teamvoided.templatemod.TemplateMod::commonInit")
-    entrypoint("client", "org.teamvoided.templatemod.TemplateMod::clientInit")
+    entrypoint("main", "org.teamvoided.template.Template::commonInit")
+    entrypoint("client", "org.teamvoided.template.Template::clientInit")
 }
 
 dependencies{
