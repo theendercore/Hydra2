@@ -14,6 +14,7 @@ description = "TeamVoided Template Mod"
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://maven.teamvoided.org/releases") }
 }
 
 modSettings {
@@ -22,6 +23,13 @@ modSettings {
 
     entrypoint("main", "org.teamvoided.templatemod.TemplateMod::commonInit")
     entrypoint("client", "org.teamvoided.templatemod.TemplateMod::clientInit")
+}
+
+dependencies{
+    //TwitchAPI
+    implementation("com.github.twitch4j:twitch4j:${project.properties["twitch4j_version"]}")
+
+    modImplementation("org.teamvoided:voidlib-core:1.5.2+1.20.1")
 }
 
 tasks {
