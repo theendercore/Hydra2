@@ -3,6 +3,7 @@ package org.teamvoided.hydra
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
 import org.teamvoided.hydra.init.CommandRegistry
+import org.teamvoided.hydra.init.KeyBinds
 import org.teamvoided.hydra.init.StreamActionRegistry
 
 
@@ -17,6 +18,7 @@ object Hydra {
         LOGGER.info("Hello from Common")
         StreamActionRegistry.init()
         CommandRegistry.init()
+        KeyBinds.init()
 
 //        val resultList = TwitchIntegration.client.helix.getUsers(ModConfig.oauthKey, null, listOf(ModConfig.username)).execute()
 //        val bd = resultList.users[0].id

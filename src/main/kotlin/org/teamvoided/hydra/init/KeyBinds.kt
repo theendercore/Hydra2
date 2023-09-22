@@ -10,7 +10,7 @@ import org.teamvoided.hydra.networking.packages.JoinServerC2S
 object KeyBinds {
     val testKey = KeyBind("yes", InputUtil.KEY_V_CODE, "yes")
 
-    fun inti() {
+    fun init() {
         ClientTickEvents.END_CLIENT_TICK.register {
             if (testKey.wasPressed()) {
                 ClientPlayNetworking.send(JOIN_SERVER, JoinServerC2S("asd").write())
