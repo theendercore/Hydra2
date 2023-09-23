@@ -10,7 +10,7 @@ import org.teamvoided.hydra.networking.NetworkManager
 
 @Suppress("unused")
 object Hydra {
-    const val MODID = "template"
+    const val MODID = "hydra"
 
     @JvmField
     val LOGGER = LoggerFactory.getLogger(Hydra::class.java)
