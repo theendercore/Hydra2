@@ -42,7 +42,7 @@ object NetworkManager {
 
         ServerPlayNetworking.registerGlobalReceiver(CHANNEL_POINTS_EVENT) { server, player, handler, buf, sender ->
             val pkg = ChannelPointsEventC2S(buf)
-            player.sendMessage(Text.of(pkg.stuff), false)
+            player.sendMessage(Text.of("${pkg.id} ${pkg.displayName} ${pkg.userInput} ${pkg.status}"), false)
         }
 
     }

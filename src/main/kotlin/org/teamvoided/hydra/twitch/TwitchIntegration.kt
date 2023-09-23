@@ -12,7 +12,7 @@ import org.teamvoided.hydra.ModConfig
 object TwitchIntegration {
     private var innerClient: TwitchClient? = null
 
-    private var enabled = false;
+    private var enabled = false
 
     val client: TwitchClient
         get() {
@@ -60,7 +60,8 @@ object TwitchIntegration {
 
             println("extras on")
         }
-        enabled = true;
+
+        enabled = true
         println("test")
     }
 
