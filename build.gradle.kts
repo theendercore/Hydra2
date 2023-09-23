@@ -34,6 +34,8 @@ dependencies{
 //    implementation("com.github.twitch4j:twitch4j:${project.properties["twitch4j_version"]}")
 
     modImplementation("org.teamvoided:voidlib-core:1.5.2+1.20.1")
+    modImplementation("org.teamvoided:voidlib-vui:1.5.2+1.20.1")
+    modImplementation("org.teamvoided:voidlib-config:1.5.2+1.20.1")
 }
 
 tasks {
