@@ -2,7 +2,7 @@ package org.teamvoided.hydra
 
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
-import org.teamvoided.config.ClientVFig
+import org.teamvoided.hydra.config.ClientConfig
 import org.teamvoided.hydra.init.CommandRegistry
 import org.teamvoided.hydra.init.KeyBinds
 import org.teamvoided.hydra.init.StreamActionRegistry
@@ -24,7 +24,7 @@ object Hydra {
         KeyBinds.init()
         NetworkManager.initServer()
 
-        ConfigManager.registerConfig(ClientVFig)
+        ConfigManager.registerConfig(ClientConfig.VFig)
 
 //        val resultList = TwitchIntegration.client.helix.getUsers(ModConfig.oauthKey, null, listOf(ModConfig.username)).execute()
 //        val bd = resultList.users[0].id
