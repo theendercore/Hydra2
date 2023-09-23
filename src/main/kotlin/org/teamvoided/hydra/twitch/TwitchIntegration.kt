@@ -50,19 +50,19 @@ object TwitchIntegration {
 
         if (true) { // Extras
             val resultList = client.helix.getUsers(ModConfig.oauthKey, null, listOf(ModConfig.username))
-            val boradId = resultList.execute().users[0].id
+            val broadcasterId = resultList.execute().users[0].id
 
 
             val credential  = credentials(ModConfig.oauthKey)
 
-            client.pubSub.listenForChannelPointsRedemptionEvents(credential, boradId)
+            client.pubSub.listenForChannelPointsRedemptionEvents(credential, broadcasterId)
             client.eventManager.onEvent(RewardRedeemedEvent::class.java) { channelPointsEvent(it) }
 
-            println("extras on")
+            msgPlayer("extras on")
         }
 
         enabled = true
-        println("test")
+        msgPlayer("turend on")
     }
 
     fun turnOff() {
@@ -73,7 +73,6 @@ object TwitchIntegration {
             client.close()
             innerClient = null
             msgPlayer("turned off")
-            //msg player
         } else {
             msgPlayer("already off!!")
         }
