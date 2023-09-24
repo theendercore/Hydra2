@@ -36,7 +36,6 @@ object JoinServerC2SPacket: ChainC2SVoidPacket<JoinServerC2S> {
         if (data.enabled) {
             player.sendMessage(Text.of(data.broadcasterId), false)
 
-
             val pkg2C = JoinServerS2C(true)
             JoinServerS2CPacket.sendToClient(player, pkg2C)
         }

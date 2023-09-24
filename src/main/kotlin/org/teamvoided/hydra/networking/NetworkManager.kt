@@ -3,6 +3,7 @@ package org.teamvoided.hydra.networking
 import org.teamvoided.hydra.Hydra.id
 import org.teamvoided.hydra.networking.packages.c2s.ChannelPointsEventC2SPacket
 import org.teamvoided.hydra.networking.packages.c2s.JoinServerC2SPacket
+import org.teamvoided.hydra.networking.packages.c2s.FollowingEventC2S
 import org.teamvoided.hydra.networking.packages.s2c.JoinServerS2CPacket
 import org.teamvoided.voidlib.networking.Packets.open
 
@@ -29,6 +30,11 @@ object NetworkManager {
     fun initServer() {
         JoinServerC2SPacket.open()
         ChannelPointsEventC2SPacket.open()
+
+        ServerPlayNetworking.registerGlobalReceiver(FOLLOWING_EVENT) { server, player, handler, buf, sender ->
+            val name = FollowingEventC2S(buf).displayName
+            player.sendMessage(Text.of("$name has followed you!"), false)
+        }
     }
 
     fun initClient() {
