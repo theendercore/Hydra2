@@ -1,5 +1,7 @@
 package org.teamvoided.hydra.networking
 
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking
+import net.minecraft.text.Text
 import org.teamvoided.hydra.Hydra.id
 import org.teamvoided.hydra.networking.packages.c2s.ChannelPointsEventC2SPacket
 import org.teamvoided.hydra.networking.packages.c2s.JoinServerC2SPacket
