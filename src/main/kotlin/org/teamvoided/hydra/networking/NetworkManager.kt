@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking
 import net.minecraft.text.Text
 import org.teamvoided.hydra.Hydra.id
 import org.teamvoided.hydra.networking.packages.c2s.ChannelPointsEventC2S
+import org.teamvoided.hydra.networking.packages.c2s.FollowingEventC2S
 import org.teamvoided.hydra.networking.packages.c2s.JoinServerC2S
 import org.teamvoided.hydra.networking.packages.s2c.JoinServerS2C
 
@@ -43,6 +44,10 @@ object NetworkManager {
         ServerPlayNetworking.registerGlobalReceiver(CHANNEL_POINTS_EVENT) { server, player, handler, buf, sender ->
             val pkg = ChannelPointsEventC2S(buf)
             player.sendMessage(Text.of("${pkg.id} ${pkg.displayName} ${pkg.userInput} ${pkg.status}"), false)
+        }
+        ServerPlayNetworking.registerGlobalReceiver(FOLLOWING_EVENT) { server, player, handler, buf, sender ->
+            val name = FollowingEventC2S(buf).displayName
+            player.sendMessage(Text.of("$name has followed you!"), false)
         }
 
     }

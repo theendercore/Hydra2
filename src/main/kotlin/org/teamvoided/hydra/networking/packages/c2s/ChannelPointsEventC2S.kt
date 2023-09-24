@@ -4,7 +4,7 @@ import io.netty.buffer.Unpooled
 import net.minecraft.network.PacketByteBuf
 import org.teamvoided.hydra.networking.packages.HydraPackage
 
-class ChannelPointsEventC2S(
+data class ChannelPointsEventC2S(
     val id: String, val displayName: String, val userInput: String, val status: String,
 ) : HydraPackage {
     constructor(buf: PacketByteBuf) : this(buf.readString(), buf.readString(), buf.readString(), buf.readString())

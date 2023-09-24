@@ -3,6 +3,7 @@ package org.teamvoided.hydra.twitch
 import com.github.philippheuer.credentialmanager.domain.OAuth2Credential
 import com.github.twitch4j.TwitchClient
 import com.github.twitch4j.TwitchClientBuilder
+import com.github.twitch4j.pubsub.events.FollowingEvent
 import com.github.twitch4j.pubsub.events.RewardRedeemedEvent
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
@@ -56,7 +57,9 @@ object TwitchIntegration {
             val credential  = credentials(ModConfig.oauthKey)
 
             client.pubSub.listenForChannelPointsRedemptionEvents(credential, broadcasterId)
+            client.pubSub.listenForFollowingEvents(credential, broadcasterId)
             client.eventManager.onEvent(RewardRedeemedEvent::class.java) { channelPointsEvent(it) }
+            client.eventManager.onEvent(FollowingEvent::class.java) { followingEvent(it) }
 
             msgPlayer("extras on")
         }
