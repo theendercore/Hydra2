@@ -1,12 +1,10 @@
 package org.teamvoided.hydra.networking
 
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking
-import net.minecraft.text.Text
 import org.teamvoided.hydra.Hydra.id
-import org.teamvoided.hydra.networking.packages.c2s.ChannelPointsEventC2S
-import org.teamvoided.hydra.networking.packages.c2s.JoinServerC2S
-import org.teamvoided.hydra.networking.packages.s2c.JoinServerS2C
+import org.teamvoided.hydra.networking.packages.c2s.ChannelPointsEventC2SPacket
+import org.teamvoided.hydra.networking.packages.c2s.JoinServerC2SPacket
+import org.teamvoided.hydra.networking.packages.s2c.JoinServerS2CPacket
+import org.teamvoided.voidlib.networking.Packets.open
 
 //@Suppress("unused")
 object NetworkManager {
@@ -29,32 +27,11 @@ object NetworkManager {
     //add here when needed
 
     fun initServer() {
-        ServerPlayNetworking.registerGlobalReceiver(JOIN_SERVER) { server, player, handler, buf, sender ->
-            val pkg = JoinServerC2S(buf)
-            if (pkg.enabled) {
-                player.sendMessage(Text.of(pkg.broadcasterId), false)
-
-
-                val pkg2C = JoinServerS2C(true)
-                ServerPlayNetworking.send(player, JOIN_SERVER, pkg2C.write())
-            }
-        }
-
-        ServerPlayNetworking.registerGlobalReceiver(CHANNEL_POINTS_EVENT) { server, player, handler, buf, sender ->
-            val pkg = ChannelPointsEventC2S(buf)
-            player.sendMessage(Text.of("${pkg.id} ${pkg.displayName} ${pkg.userInput} ${pkg.status}"), false)
-        }
-
+        JoinServerC2SPacket.open()
+        ChannelPointsEventC2SPacket.open()
     }
 
     fun initClient() {
-        ClientPlayNetworking.registerGlobalReceiver(JOIN_SERVER) { client, handler, buf, sender ->
-            val pkg = JoinServerS2C(buf)
-            if (pkg.enabled) {
-                //do logic
-            }
-        }
-
+        JoinServerS2CPacket.open()
     }
-
 }

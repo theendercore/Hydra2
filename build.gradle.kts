@@ -35,6 +35,7 @@ dependencies{
     modImplementation("org.teamvoided:voidlib-core:1.5.4+1.20.1")
     modImplementation("org.teamvoided:voidlib-vui:1.5.4+1.20.1")
     modImplementation("org.teamvoided:voidlib-config:1.5.4+1.20.1")
+    modImplementation("org.teamvoided:voidlib-networking:1.5.4+1.20.1")
 }
 
 tasks {
