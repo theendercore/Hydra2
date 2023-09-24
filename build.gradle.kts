@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("fabric-loom") version "1.3.8"
-    kotlin("jvm") version "1.9.0"
-    kotlin("plugin.serialization") version "1.9.0"
+    kotlin("jvm") version "1.9.10"
+    kotlin("plugin.serialization") version "1.9.10"
     id("org.teamvoided.iridium") version "3.0.2"
 }
 
@@ -32,9 +32,9 @@ dependencies{
     //TwitchAPI
     modImplementation ("com.github.twitch4j:twitch4j-fabric:1.17.0+1.3.0")
 
-    modImplementation("org.teamvoided:voidlib-core:1.5.2+1.20.1")
-    modImplementation("org.teamvoided:voidlib-vui:1.5.2+1.20.1")
-    modImplementation("org.teamvoided:voidlib-config:1.5.2+1.20.1")
+    modImplementation("org.teamvoided:voidlib-core:1.5.4+1.20.1")
+    modImplementation("org.teamvoided:voidlib-vui:1.5.4+1.20.1")
+    modImplementation("org.teamvoided:voidlib-config:1.5.4+1.20.1")
 }
 
 tasks {

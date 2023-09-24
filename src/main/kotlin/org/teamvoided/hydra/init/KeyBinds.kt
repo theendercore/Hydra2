@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking
 import net.minecraft.client.option.KeyBind
-import org.teamvoided.config.Config
+import org.teamvoided.hydra.config.Config
 import org.teamvoided.hydra.Hydra.MODID
 import org.teamvoided.hydra.networking.NetworkManager.JOIN_SERVER
 import org.teamvoided.hydra.networking.packages.c2s.JoinServerC2S
